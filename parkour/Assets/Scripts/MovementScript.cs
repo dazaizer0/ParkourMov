@@ -23,6 +23,7 @@ public class MovementScript : MonoBehaviour
     public float dushPower;
     public bool canDush;
     public int todush = 1;
+    public int dushs = 2;
 
     [Header("Jump")]
     private Vector3 jump;
@@ -51,6 +52,7 @@ public class MovementScript : MonoBehaviour
     }
     void OnCollisionStay()
     {
+        dushs = 2;
         todush = 1;
         isGrounded = true;
     }
@@ -80,9 +82,10 @@ public class MovementScript : MonoBehaviour
             rb.AddForce(jump * jumpforce, ForceMode.Impulse);
             isGrounded = false;
         }
-        if (Input.GetKeyDown(dushKey) && canDush)
+        if (Input.GetKeyDown(dushKey) && canDush && dushs >= 1)
         {
             rb.AddForce(camera.transform.forward * dushPower * 10000);
+            dushs -= 1;
         }
 
     }
