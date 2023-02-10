@@ -23,7 +23,6 @@ public class MovementScript : MonoBehaviour
     public float dushPower;
     public bool canDush;
     public int todush = 1;
-    public Transform lookAt;
 
     [Header("Jump")]
     private Vector3 jump;
@@ -85,7 +84,6 @@ public class MovementScript : MonoBehaviour
         {
             rb.AddForce(camera.transform.forward * dushPower * 10000);
         }
-        //transform.rotation = Quaternion.LookRotation(Vector3.forward, lookAt.position);
 
     }
     private void FixedUpdate()
