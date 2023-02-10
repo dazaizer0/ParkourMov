@@ -9,7 +9,7 @@ public class Spawner : MonoBehaviour
     void Start()
     {
         for(int i = 0; i < numberOfObjectsToSpan; i++){
-            Vector3 randomPosition = new Vector3(Random.Range(20, -20), 1, Random.Range(20, -20));
+            Vector3 randomPosition = new Vector3(Random.Range(75, -75), 1, Random.Range(75, -75));
             Instantiate(objectToSpawn, randomPosition, Quaternion.identity);
         }
     }
