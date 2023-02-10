@@ -11,6 +11,7 @@ public class MovementScript : MonoBehaviour
 
     [Header("Camera")]
     private float yaw, pitch;
+    public Transform camera;
 
     [Header("Movement")]
     private Rigidbody rb;
@@ -25,7 +26,7 @@ public class MovementScript : MonoBehaviour
     public Transform lookAt;
 
     [Header("Jump")]
-    public Vector3 jump;
+    private Vector3 jump;
     public bool isGrounded;
 
     [Header("Keybinds")]
@@ -82,7 +83,7 @@ public class MovementScript : MonoBehaviour
         }
         if (Input.GetKeyDown(dushKey) && canDush)
         {
-            rb.AddForce(transform.forward * dushPower);
+            rb.AddForce(camera.transform.forward * dushPower * 10000);
         }
         //transform.rotation = Quaternion.LookRotation(Vector3.forward, lookAt.position);
 
