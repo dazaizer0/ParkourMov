@@ -9,6 +9,7 @@ TagManager:
   - Collect
   - PlayerStand
   - ssen
+  - End
   layers:
   - Default
   - TransparentFX
